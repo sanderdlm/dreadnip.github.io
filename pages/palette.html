@@ -163,10 +163,8 @@
 const colors = document.querySelectorAll('article');
 colors.forEach((color) => {
 	color.addEventListener('click', (event) => {
-		console.log(event.target);
-		let hex = event.target.querySelector('span').textContent;
-		hex.select();
-  		document.execCommand("copy");
+		const hex = event.currentTarget.querySelector('span').textContent;
+		navigator.clipboard.writeText(hex);
 	});
 });
 </script>
